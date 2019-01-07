@@ -1,12 +1,25 @@
 .form-main {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .view-preview {
   background-color: #777;
-  height: 200px;
   text-align: left;
 }
 
+.preview-image {
+  padding: 10px;
+}
 
+.preview-image img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.preview-data {
+  padding: 10px;
+}
