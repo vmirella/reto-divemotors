@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './App.css';
 
 class App extends Component {
+  
   render() {
     return (
       <div className="container form-main">
@@ -51,7 +52,20 @@ class App extends Component {
             <div className="preview">
               <FormGroup>
                 <Label>Vista Previa</Label>
-                <p></p>
+                <div className="view-preview">
+                  <div className="row">
+                    <div className="col-md-4">
+                      <img src=""/>
+                    </div>
+                    <div className="col-md-8">
+                      <p>Nombre: </p>
+                      <p>Apellido: </p>
+                      <p>Correo: </p>
+                      <p>Cargo: </p>
+                      <p>Ingreso: </p>
+                    </div>
+                  </div>
+                </div>
               </FormGroup>
               <Button>Descargar</Button>
             </div>

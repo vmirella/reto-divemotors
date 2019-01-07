@@ -3,9 +3,10 @@
   max-width: 800px;
 }
 
-p {
+.view-preview {
   background-color: #777;
   height: 200px;
+  text-align: left;
 }
 
 
