@@ -67,9 +67,11 @@ class App extends Component {
   render() {
     return (
       <div className="container form-main">
+        <h3 className="mt-4 text-center">Generador de carnet</h3>
         <div className="row">
           <div className="col-md-6">
           <Form>
+            <h5 className="my-4">Ingresa tus datos</h5>
             <FormGroup>
               <Label>Nombre</Label>
               <Input onChange={e => this.handleChangeName(e)} value={this.state.name} type="text" placeholder="Ingrese aquí su nombre." />
@@ -100,7 +102,7 @@ class App extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label>Foto</Label>
+              <Label>Foto - <span className="note">Tamaño 135 x 180 px</span> </Label>
               <Input onChange={e => this.handleChangeImage(e)} type="file"/>
               <FormText color="muted">
                 Seleccione una foto para adjuntarla a su carnet.
@@ -110,11 +112,14 @@ class App extends Component {
           </div>
           <div className="col-md-6">
             <div className="preview">
-              <FormGroup>
-                <Label>Vista Previa</Label>
-                <div ref={'photo'} className="container-fluid view-preview">
+              <h5 className="my-4">Vista Previa</h5>
+              <div className="mb-3 p-2 view-preview-container">
+                <div ref={'photo'} className="container-fluid card">
                   <div className="row">
                     <div className="col-sm-4 preview-image">
+                      {this.state.image === null && <div className="empty-image d-flex align-items-center justify-content-center card">
+                        <div>135 X 180</div>
+                      </div>}
                       <img alt="" src={this.state.image}/>
                     </div>
                     <div className="col-sm-8 preview-data">
@@ -122,11 +127,11 @@ class App extends Component {
                       <p>Apellido: {this.state.lastname}</p>
                       <p>Correo: {this.state.email}</p>
                       <p>Cargo: {this.state.position}</p>
-                      <p>Ingreso: {this.state.dateAdmissionFormat}</p>
+                      <p className="mb-0">Ingreso: {this.state.dateAdmissionFormat}</p>
                     </div>
                   </div>
                 </div>
-              </FormGroup>
+              </div>
               <Button onClick={this.generatePhoto}>Descargar</Button>
               <p>{this.state.errorMessage}</p>
             </div>
